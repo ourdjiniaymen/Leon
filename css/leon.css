@@ -14,3 +14,34 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 /* End Global Rules */
+
+/* Start Container */
+.parent {
+  background-color: #eee;
+}
+.parent > .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #aaa;
+}
+/* Small Screens  */
+@media (min-width: 768px) {
+  .parent > .container {
+    width: 750px;
+  }
+}
+/* Meduim Screens */
+@media (min-width: 992px) {
+  .parent > .container {
+    width: 970px;
+  }
+}
+/* Large Screens */
+@media (min-width: 1200px) {
+  .parent > .container {
+    width: 1170px;
+  }
+}
+/* End Container */
