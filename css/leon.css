@@ -2,7 +2,8 @@
 :root {
   --main-color: #10cab7;
   --secondary-color: #2c4755;
-  --third-color: #f6f6f6;
+  --section-background: #f6f6f6;
+  --section-padding: 60px;
 }
 /* End Variables */
 
@@ -124,7 +125,7 @@ header nav .links {
   position: absolute;
   right: 0;
   top: calc(100% + 15px);
-  background-color: var(--third-color);
+  background-color: var(--section-background);
   display: none;
 }
 header nav:hover .links {
@@ -133,7 +134,7 @@ header nav:hover .links {
 header nav .links::before {
   content: "";
   border: 10px solid transparent;
-  border-bottom-color: var(--third-color);
+  border-bottom-color: var(--section-background);
   position: absolute;
   top: 0;
   right: 0;
@@ -201,9 +202,9 @@ header nav .links li a {
 
 /* Start Features Section */
 .features {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: var(--third-color);
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
 }
 .features .container {
   display: grid;
@@ -234,8 +235,8 @@ header nav .links li a {
 
 /* Start Services Section */
 .services {
-  padding-top: 80px;
-  padding-bottom: 60px;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
 .services .services-content {
   margin-top: 60px;
@@ -302,3 +303,37 @@ header nav .links li a {
   }
 }
 /* End Services Section */
+
+/* Start Portfolio Section */
+.portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-color: var(--section-background);
+}
+.portfolio .portfolio-content {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.portfolio .portfolio-content .card {
+  background-color: #fff;
+}
+.portfolio .portfolio-content .card img {
+  max-width: 100%;
+}
+.portfolio .portfolio-content .card .text {
+  padding: 20px;
+}
+.portfolio .portfolio-content .card .text h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+.portfolio .portfolio-content .card .text p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #777;
+}
+/* End Portfolio Section */
