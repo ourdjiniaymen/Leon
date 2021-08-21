@@ -63,9 +63,7 @@ header .logo {
 header nav {
   position: relative;
 }
-header nav:hover .bar-icon span:nth-child(2) {
-  width: 100%;
-}
+
 header nav .bar-icon {
   width: 30px;
   display: flex;
@@ -86,6 +84,9 @@ header nav .bar-icon span:nth-child(2) {
   -moz-transition: width 0.3s;
   -ms-transition: width 0.3s;
   -o-transition: width 0.3s;
+}
+header nav:hover .bar-icon span:nth-child(2) {
+  width: 100%;
 }
 header nav .links {
   min-width: 200px;
@@ -166,3 +167,38 @@ header nav .links li a {
   line-height: 1.8;
 }
 /* End Landing Section */
+
+/* Start Features Section */
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.features .container .feat {
+  padding: 20px;
+  text-align: center;
+}
+
+.features .container .feat i{
+  color: var(--main-color);
+  font-size: 50px;
+  
+}
+.features .container .feat h3{
+  font-size: 18px;
+  font-weight: 800;
+  margin: 30px 0;
+}
+.features .container .feat p{
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #777
+  
+}
+/* End Features Section */
