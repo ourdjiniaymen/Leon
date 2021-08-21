@@ -337,3 +337,18 @@ header nav .links li a {
   color: #777;
 }
 /* End Portfolio Section */
+
+/* Start Footer */
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-size: 18px;
+}
+footer span {
+  color: var(--main-color);
+  font-weight: bold;
+}
+/* End Footer */
