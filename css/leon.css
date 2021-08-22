@@ -3,7 +3,9 @@
   --main-color: #10cab7;
   --secondary-color: #2c4755;
   --section-background: #f6f6f6;
+  --paragraph-color: #777;
   --section-padding: 60px;
+  --main-duration: 0.3s;
 }
 /*----------------------------------- End Variables -------------------------------------------*/
 
@@ -55,6 +57,7 @@ a {
 /*----------------------------------- End Global Rules ----------------------------------------*/
 
 /*----------------------------------- Start Component -----------------------------------------*/
+/*-------------------- Special Heading ---------------------*/
 .special-heading {
   text-align: center;
   font-size: 100px;
@@ -63,7 +66,7 @@ a {
   letter-spacing: -4px;
 }
 .special-heading + p {
-  color: #777;
+  color: var(--paragraph-color, #777);
   font-size: 20px;
   font-weight: 400;
   text-align: center;
@@ -79,6 +82,16 @@ a {
     margin-top: -16px;
   }
 }
+/*-------------------- End Special Heading ---------------------*/
+
+/*-------------------- Grid-3 ---------------------*/
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+/*-------------------- End Grid-3 ---------------------*/
+
 /*----------------------------------- End Component -------------------------------------------*/
 
 /*----------------------------------- Start Header ---------------------------------------------*/
@@ -112,11 +125,11 @@ header nav .bar-icon span {
 }
 header nav .bar-icon span:nth-child(2) {
   width: 70%;
-  transition: width 0.3s;
-  -webkit-transition: width 0.3s;
-  -moz-transition: width 0.3s;
-  -ms-transition: width 0.3s;
-  -o-transition: width 0.3s;
+  -webkit-transition: width var(--main-duration, 0.3s);
+  -moz-transition: width var(--main-duration, 0.3s);
+  -ms-transition: width var(--main-duration, 0.3s);
+  -o-transition: width var(--main-duration, 0.3s);
+  transition: width var(--main-duration, 0.3s);
 }
 header nav:hover .bar-icon span:nth-child(2) {
   width: 100%;
@@ -126,7 +139,7 @@ header nav .links {
   position: absolute;
   right: 0;
   top: calc(100% + 15px);
-  background-color: var(--section-background);
+  background-color: var(--section-background, #f6f6f6);
   display: none;
 }
 header nav:hover .links {
@@ -135,7 +148,7 @@ header nav:hover .links {
 header nav .links::before {
   content: "";
   border: 10px solid transparent;
-  border-bottom-color: var(--section-background);
+  border-bottom-color: var(--section-background, #f6f6f6);
   position: absolute;
   top: 0;
   right: 0;
@@ -147,11 +160,11 @@ header nav .links::before {
 }
 header nav .links li {
   padding: 15px;
-  transition: padding 0.3s;
-  -webkit-transition: padding 0.3s;
-  -moz-transition: padding 0.3s;
-  -ms-transition: padding 0.3s;
-  -o-transition: padding 0.3s;
+  -webkit-transition: padding var(--main-duration, 0.3s);
+  -moz-transition: padding var(--main-duration, 0.3s);
+  -ms-transition: padding var(--main-duration, 0.3s);
+  -o-transition: padding var(--main-duration, 0.3s);
+  transition: padding var(--main-duration, 0.3s);
 }
 header nav .links li:not(:last-child) {
   border-bottom: 1px solid #ddd;
@@ -188,7 +201,7 @@ header nav .links li a {
 }
 .landing .intro-text h1 {
   margin: 0;
-  color: var(--main-color);
+  color: var(--main-color, #10cab7);
   font-size: 50px;
   font-weight: bold;
 }
@@ -203,14 +216,9 @@ header nav .links li a {
 
 /*----------------------------------- Start Features Section ----------------------------------*/
 .features {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-  background-color: var(--section-background);
-}
-.features .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  padding-top: var(--section-padding, 60px);
+  padding-bottom: var(--section-padding, 60px);
+  background-color: var(--section-background, 60px);
 }
 .features .container .feat {
   padding: 20px;
@@ -218,7 +226,7 @@ header nav .links li a {
 }
 
 .features .container .feat i {
-  color: var(--main-color);
+  color: var(--main-color, #10cab7);
   font-size: 50px;
 }
 .features .container .feat h3 {
@@ -230,20 +238,17 @@ header nav .links li a {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.8;
-  color: #777;
+  color: var(--paragraph-color, #777);
 }
 /*----------------------------------- End Features Section ------------------------------------*/
 
 /*----------------------------------- Start Services Section ----------------------------------*/
 .services {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding, 60px);
+  padding-bottom: var(--section-padding, 60px);
 }
 .services .services-content {
   margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
 }
 .services .services-content .serv {
   display: flex;
@@ -258,7 +263,7 @@ header nav .links li a {
   }
 }
 .services .services-content .serv i {
-  color: var(--main-color);
+  color: var(--main-color, #10cab7);
   font-size: 30px;
 }
 .services .services-content .serv .text {
@@ -273,7 +278,7 @@ header nav .links li a {
   font-size: 17px;
   font-weight: 300;
   line-height: 1.6;
-  color: #777;
+  color: var(--paragraph-color, #777);
 }
 .services .services-content .image {
   text-align: center;
@@ -286,7 +291,7 @@ header nav .links li a {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color, #2c4755);
   z-index: -1;
   transform: translate(0, -10%);
   -webkit-transform: translate(0, -10%);
@@ -307,15 +312,12 @@ header nav .links li a {
 
 /*----------------------------------- Start Portfolio Section ---------------------------------*/
 .portfolio {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-  background-color: var(--section-background);
+  padding-top: var(--section-padding, 60px);
+  padding-bottom: var(--section-padding, 60px);
+  background-color: var(--section-background, #f6f6f6);
 }
 .portfolio .portfolio-content {
   margin-top: 60px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
 }
 .portfolio .portfolio-content .card {
   background-color: #fff;
@@ -335,14 +337,14 @@ header nav .links li a {
   font-size: 17px;
   font-weight: 300;
   line-height: 1.6;
-  color: #777;
+  color: var(--paragraph-color, #777);
 }
 /*----------------------------------- End Portfolio Section -----------------------------------*/
 
 /*----------------------------------- Start About Section -------------------------------------*/
 .about {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding, 60px);
+  padding-bottom: var(--section-padding, 60px);
 }
 .about .about-content {
   margin-top: 60px;
@@ -386,8 +388,8 @@ header nav .links li a {
   right: 0;
   background-color: transparent;
   z-index: -1;
-  border-left: 80px solid var(--main-color);
-  border-bottom: 80px solid var(--main-color);
+  border-left: 80px solid var(--main-color, #10cab7);
+  border-bottom: 80px solid var(--main-color, #10cab7);
   transform: translate(calc(100% - 40px), -40px);
   -webkit-transform: translate(calc(100% - 40px), -40px);
   -moz-transform: translate(calc(100% - 40px), -40px);
@@ -418,12 +420,12 @@ header nav .links li a {
   margin-bottom: 40px;
 }
 .about .about-content .text p:last-of-type {
-  color: #777;
+  color: var(--paragraph-color, #777);
   line-height: 2;
   margin-top: 40px;
 }
 .about .about-content .text hr {
-  border-color: var(--main-color);
+  border-color: var(--main-color, #10cab7);
   width: 50%;
 }
 /*-------- Mobile and Small Screens -------*/
@@ -441,16 +443,16 @@ header nav .links li a {
 
 /*----------------------------------- Start Contact Section ---------------------------------------*/
 .contact {
-  padding-top: var(--section-padding);
-  padding-bottom: calc(var(--section-padding) + 60px);
-  background-color: var(--section-background);
+  padding-top: var(--section-padding, 60px);
+  padding-bottom: calc(var(--section-padding, 60px) + 60px);
+  background-color: var(--section-background, #f6f6f6);
 }
 .contact .contact-content {
   margin-top: 60px;
   text-align: center;
 }
 .contact .contact-content > p {
-  color: var(--secondary-color);
+  color: var(--secondary-color, #2c4755);
   font-weight: 800;
   font-size: 35px;
   letter-spacing: -2px;
@@ -464,7 +466,7 @@ header nav .links li a {
 }
 .contact .contact-content a {
   display: inline-block;
-  color: var(--main-color);
+  color: var(--main-color, #10cab7);
   font-weight: 800;
   font-size: 35px;
   margin-bottom: 20px;
@@ -483,7 +485,7 @@ header nav .links li a {
   margin-left: auto;
 }
 .contact .contact-content .social i {
-  color: var(--secondary-color);
+  color: var(--secondary-color, #2c4755);
 }
 /*----------------------------------- End Contact Section ---------------------------------------*/
 
@@ -493,12 +495,12 @@ footer {
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color, #2c4755);
   color: #fff;
   font-size: 18px;
 }
 footer span {
-  color: var(--main-color);
+  color: var(--main-color, #10cab7);
   font-weight: bold;
 }
 /*----------------------------------- End Footer Section -------------------------------------*/
